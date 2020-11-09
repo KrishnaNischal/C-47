@@ -8,17 +8,18 @@ var database;
 
 var form, player, game;
 
-var cars, car1, car2, car3, car4;
-
-var track, car1_img, car2_img, car3_img, car4_img;
+var ryu, goku ,ryuK,ryuP,ryuR,ryuW,ryuJ,gokuW,gokuR,gokuP 
 
 function preload(){
-  track = loadImage("../images/track.jpg");
-  car1_img = loadImage("../images/car1.png");
-  car2_img = loadImage("../images/car2.png");
-  car3_img = loadImage("../images/car3.png");
-  car4_img = loadImage("../images/car4.png");
-  ground = loadImage("../images/ground.png");
+  ryuK = loadAnimation('./images/ryu kick.gif');
+  ryuP = loadAnimation('./images/p1.gif','./images/p2.gif','./images/p3.gif','./images/p4.gif','./images/p5.gif');
+  ryuR = loadAnimation('./images/ryu rest.gif');
+  ryuW = loadAnimation('./images/ryu walk.gif');
+  ryuJ = loadAnimation('./images/ryu jump.gif');
+  gokuW = loadAnimation('./images/goku walk.gif');
+  gokuR = loadAnimation('./images/goku rest.gif');
+  gokuP = loadAnimation('./images/goku punch.gif');
+
 }
 
 function setup(){
@@ -31,7 +32,7 @@ function setup(){
 
 
 function draw(){
-  if(playerCount === 4){
+  if(playerCount === 2){
     game.update(1);
   }
   if(gameState === 1){
