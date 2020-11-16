@@ -28,50 +28,53 @@ class Game {
       form.display();
     }
 
-    ryu = createSprite(displayWidth/2+50,displayHeight/2+50);
-    ryu.addAnimation("player1",ryuP);   
-    goku = createSprite(displayWidth/2-50,displayHeight/2+50);
-    goku.addAnimation("player2",gokuR);
+    ryu = createSprite(displayWidth/2+600,displayHeight/2+50);
+    ryu.addAnimation("player1",ryuR);   
+    ken = createSprite(displayWidth/2-600,displayHeight/2+50);
+    ken.addAnimation("player2",kenR);
+    playerName=[ryu,ken]
    
   }
 
   play(){
     form.hide();
+    Player.getPlayerInfo();
     if(allPlayers !== undefined){
       var index=0;
-      var x;
-      var y;
+      var x=displayWidth/2;
+      var y=400;
+     for(var plr in allPlayers){
+         index=index+1;
+         x=x+200
 
-        if (index === player.index){
-          stroke(10);
+        // playerName[index-1].x=x
+         //playerName[index-1].y=y
+         if (index === player.index){
+          textSize(30);
           fill("red");
-          ellipse(x,y,60,60);
-          cars[index - 1].shapeColor = "red";
-          camera.position.x = displayWidth/2;
-          camera.position.y = cars[index-1].y;
+          text(player.name,playerName[index-1].x,displayHeight/2+100);        
         }
-        if(keyIsDown("k")){
-          ryu.changeAnimation("kick",ryuK);
-        }
-
       }
-    if(keyIsDown(UP_ARROW) && player.index !== null){
-      player.distance +=10
-      player.update();
+    }
+        if(keyDown("k")){
+          ryu.addAnimation("kick",ryuK);       
+        };
+        if(keyIsDown("p")){
+          ryu.addAnimation("punch",ryuP);       
+        };
+        if(keyIsDown("j")){
+          ryuR.addAnimation("jump",ryuJ);       
+        };
+        if(keyIsDown(LEFT_ARROW)){
+          ryuR.addAnimation("walk",ryuW);       
+        };
+        drawSprites();
+      }
+
+      end(){
+        console.log("Game Ended");
+        console.log(player.rank);
+      }
     }
 
-    if(player.distance > 4200){
-      gameState = 2;
-      player.rank+=1;
-      Player.updateCarsAtEnd(player.rank);
-    }
-   
-    drawSprites();
-  }
-
-  end(){
-    console.log("Game Ended");
-    console.log(player.rank);
-  }
-}
 

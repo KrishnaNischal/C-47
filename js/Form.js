@@ -19,7 +19,7 @@ class Form {
     this.button.position(displayWidth/2 + 30, displayHeight/2);
     this.reset.position(displayWidth-100,20);
 
-    this.button.mousePressed(()=>{ 
+    this.button.mousePressed(()=>{
       this.input.hide();
       this.button.hide(); 
       player.name = this.input.value();                     
