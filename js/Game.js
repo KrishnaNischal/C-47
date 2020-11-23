@@ -55,21 +55,21 @@ class Game {
           text(player.name,playerName[index-1].x,displayHeight/2+100);        
         }
       }
-    }
-        if(keyDown("k")){
-          ryu.addAnimation("kick",ryuK);       
-        };
+    console.log("we are here");
+     
+      
         if(keyIsDown("p")){
           ryu.addAnimation("punch",ryuP);       
         };
         if(keyIsDown("j")){
-          ryuR.addAnimation("jump",ryuJ);       
+          ryuR.addAnimation("jump",ryuJ); 
         };
         if(keyIsDown(LEFT_ARROW)){
           ryuR.addAnimation("walk",ryuW);       
         };
         drawSprites();
       }
+    }
 
       end(){
         console.log("Game Ended");

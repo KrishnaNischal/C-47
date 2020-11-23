@@ -13,7 +13,7 @@ class Form {
   }
 
   display(){
-    this.title.html("Fighting Game"); 
+    this.title.html("Masters of Death"); 
     this.title.position(displayWidth/2 - 50, 0);      
     this.input.position(displayWidth/2 - 40 , displayHeight/2 - 80);
     this.button.position(displayWidth/2 + 30, displayHeight/2);
