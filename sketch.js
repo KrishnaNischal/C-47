@@ -50,7 +50,6 @@ function keyPressed(){
   console.log("keyPressed")
   console.log(keyCode);
   if(keyCode===75){
-    ///console.log("keyCode");
     ryu.changeAnimation("kick",ryuK);
   }
 }
