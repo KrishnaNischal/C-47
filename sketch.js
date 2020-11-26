@@ -46,10 +46,4 @@ function draw(){
     game.end();
   }
 }
-function keyPressed(){
-  console.log("keyPressed")
-  console.log(keyCode);
-  if(keyCode===75){
-    ryu.changeAnimation("kick",ryuK);
-  }
-}
+

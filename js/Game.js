@@ -29,7 +29,8 @@ class Game {
     }
 
     ryu = createSprite(displayWidth/2+600,displayHeight/2+50);
-    ryu.addAnimation("player1",ryuR);   
+    ryu.addAnimation("player1",ryuR);
+    ryu.addAnimation("kick", ryuK) /// new animaiton
     ken = createSprite(displayWidth/2-600,displayHeight/2+50);
     ken.addAnimation("player2",kenR);
     playerName=[ryu,ken]
@@ -55,18 +56,17 @@ class Game {
           text(player.name,playerName[index-1].x,displayHeight/2+100);        
         }
       }
+      if(keyIsDown("k")){
+        console.log("Inside keypresed")
+        ryu.changeAnimation("kick",ryuK);
+      }
     console.log("we are here");
      
-      
-        if(keyIsDown("p")){
-          ryu.addAnimation("punch",ryuP);       
-        };
-        if(keyIsDown("j")){
-          ryuR.addAnimation("jump",ryuJ); 
-        };
-        if(keyIsDown(LEFT_ARROW)){
-          ryuR.addAnimation("walk",ryuW);       
-        };
+    if(keyIsDown(LEFT_ARROW)){
+      ryuR.addAnimation("walk",ryuW);       
+    };
+
+
         drawSprites();
       }
     }
